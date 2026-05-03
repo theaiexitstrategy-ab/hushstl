@@ -618,19 +618,10 @@ footer { padding: 2.5rem 1.5rem; border-top: 1px solid rgba(201,168,76,0.07); di
 
     <div class="cta-group fade-up">
       <a href="#tickets" class="btn-gold"><span>🎟 &nbsp;Get Your Tickets</span></a>
-      <a href="sms:+18883020649&body=HUSH" class="btn-outline">Text HUSH for VIP Access</a>
+      <a href="sms:+18885468895&body=HUSH" class="btn-outline">Text HUSH for VIP Access</a>
     </div>
   </div>
 </section>
-
-<!-- HUSH BAND -->
-<div class="hush-band">
-  <span class="hb hb-label">Text</span>
-  <span class="hb hb-keyword">HUSH</span>
-  <span class="hb hb-label">to</span>
-  <span class="hb hb-keyword">(888) 302-0649</span>
-  <span class="hb hb-label">for Early Access &amp; VIP Offers</span>
-</div>
 
 <!-- JOIN THE LIST -->
 <section class="join-section">
@@ -669,6 +660,15 @@ footer { padding: 2.5rem 1.5rem; border-top: 1px solid rgba(201,168,76,0.07); di
   </div>
 </section>
 
+<!-- HUSH BAND -->
+<div class="hush-band">
+  <span class="hb hb-label">Text</span>
+  <span class="hb hb-keyword">HUSH</span>
+  <span class="hb hb-label">to</span>
+  <span class="hb hb-keyword">(888) 546-8895</span>
+  <span class="hb hb-label">for Early Access &amp; VIP Offers</span>
+</div>
+
 <!-- DETAILS -->
 <section class="details-section">
   <p class="section-eyebrow fade-up">Season 10</p>
@@ -705,7 +705,7 @@ footer { padding: 2.5rem 1.5rem; border-top: 1px solid rgba(201,168,76,0.07); di
     </div>
   </div>
 
-  <div class="tables-badge fade-up">Tables &amp; VIP Access — Text VIP to (888) 302-0649</div>
+  <div class="tables-badge fade-up">Tables &amp; VIP Access — Text VIP to (888) 546-8895</div>
 </section>
 
 <div class="h-rule"></div>
@@ -723,14 +723,14 @@ footer { padding: 2.5rem 1.5rem; border-top: 1px solid rgba(201,168,76,0.07); di
       <div class="sms-keyword-block fade-up">
         <span class="sms-keyword">HUSH</span>
         <span class="sms-to">→</span>
-        <span class="sms-number">(888) 302-0649</span>
+        <span class="sms-number">(888) 546-8895</span>
       </div>
     </div>
     <div class="phone-wrap fade-up">
       <div class="phone">
         <div class="phone-header">
           <div class="phone-name">Hush STL 🖤</div>
-          <div class="phone-num">(888) 302-0649</div>
+          <div class="phone-num">(888) 546-8895</div>
         </div>
         <div class="messages">
           <div class="msg-time">Sun · 4:41 PM</div>
@@ -789,11 +789,11 @@ footer { padding: 2.5rem 1.5rem; border-top: 1px solid rgba(201,168,76,0.07); di
   <div class="sms-big fade-up">
     <span class="sms-big-keyword">HUSH</span>
     <span class="sms-big-arrow">→</span>
-    <span class="sms-big-number">(888) 302-0649</span>
+    <span class="sms-big-number">(888) 546-8895</span>
   </div>
   <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;max-width:290px;width:100%;" class="fade-up">
     <a href="#" class="btn-gold" style="width:100%;"><span>🎟 &nbsp;Get Tickets Now</span></a>
-    <a href="sms:+18883020649&body=HUSH" class="btn-outline" style="width:100%;">Text HUSH to Join the List</a>
+    <a href="sms:+18885468895&body=HUSH" class="btn-outline" style="width:100%;">Text HUSH to Join the List</a>
   </div>
   <p class="fade-up" style="font-family:'Montserrat',sans-serif;font-size:0.46rem;letter-spacing:0.2em;color:rgba(245,240,232,0.12);text-transform:uppercase;margin-top:2rem;">
     Reply STOP to opt out · Msg &amp; data rates may apply
@@ -858,7 +858,7 @@ function handleJoin() {
   });
 }
 
-(entries => {
+const obs = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
       setTimeout(() => e.target.classList.add('in'), i * 70);

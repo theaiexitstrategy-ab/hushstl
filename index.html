@@ -838,23 +838,32 @@ function handleJoin() {
   btn.style.opacity = '0.6';
   btn.style.pointerEvents = 'none';
 
-  // Format as E.164
   const e164 = '+1' + raw;
 
-  // POST to your SMS API
   fetch('/api/sms/hush/join', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ phone: e164 })
   })
-  .then(() => {
+  .then(async (resp) => {
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => ({}));
+      throw new Error(err.error || 'Send failed');
+    }
     document.getElementById('joinForm').style.display = 'none';
     document.getElementById('joinSuccess').style.display = 'flex';
   })
-  .catch(() => {
-    // Show success anyway — wire backend later
-    document.getElementById('joinForm').style.display = 'none';
-    document.getElementById('joinSuccess').style.display = 'flex';
+  .catch((e) => {
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'auto';
+    input.style.borderColor = '#ff4757';
+    input.value = '';
+    input.placeholder = 'Could not send — try again';
+    setTimeout(() => {
+      input.style.borderColor = 'rgba(201,168,76,0.3)';
+      input.placeholder = 'Your phone number';
+    }, 3000);
+    console.error('Join failed:', e);
   });
 }
 
